@@ -4,32 +4,34 @@
  */
 var longestCommonPrefix = function(strs) {
     var length = strs.length;
-    var result = "";
-    var maxlen_result = 0;
+    var min_len = 100000;
+    var substring = "";
     if (length == 0) {
-    	return "";
+        return "";
     }
     else if (length == 1) {
-    	return strs[0];
+        return strs[0];
     }
-    else {
-	    for (var i = 0,j = i + 1; i < length-1,j < length; i++,j++) {
-	        var first_str = strs[i],
-	            second_str = strs[j];
-	        var sub_result = "";
-	        maxlen_result = result.length;
-	        for (var p = 0,q = 0; p < first_str.length,q < second_str.length; p++,q++) {
-	            if (first_str.charAt(p) != second_str.charAt(q)) {
-	                break;
-	            }
-	            else {
-	                sub_result = first_str.substring(0,p+1);
-	            }
-	        }
-	        var temp_length = sub_result.length;
-	        result = temp_length > maxlen_result ? sub_result : result;
-	    }
-	    return result;
-	}
+    substring = strs[0];
+    for (var i = 1;i < length;i++) {
+        if (strs[i].length > min_len)
+            continue;
+        else if (strs[i].length < min_len) {
+            min_len = strs[i].length;
+            substring = strs[i];
+        }
+    }
+    if (!min_len) {
+        return "";
+    }
+    for (var i = 0;i < length;i++) {
+        var j = 0;
+        for (j = 0;j < min_len;j++) {
+            if (strs[i].charAt(j) != substring.charAt(j)) {
+                break;
+            }
+        }
+        substring = substring.substring(0,j);
+    }
+    return substring;
 };
-
