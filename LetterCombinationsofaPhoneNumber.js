@@ -35,3 +35,38 @@ var letterCombinations = function(digits) {
     });
     return First_array === undefined ? [] : First_array;
 };
+
+
+var map2 = [
+  "",
+  "",
+  "abc",
+  "def",
+  "ghi",
+  "jkl",
+  "mno",
+  "pqrs",
+  "tuv",
+  "wxyz",
+];
+var Prem = function(predix,offset,digits,result) {
+    if (offset >= digits.length) {
+        result.push(predix);
+        return;
+    }
+    var string = map2[digits.charAt(offset)];
+    for (var i = 0;i < string.length;i++) {
+        Prem(predix + string.charAt(i),offset+1,digits,result);
+    }
+};
+
+var letterCombinations2 = function(digits) {
+    var result = [];
+    if (digits.length == 0) return result;
+    else Prem ("",0,digits,result);
+    return result;
+};
+
+
+
+
