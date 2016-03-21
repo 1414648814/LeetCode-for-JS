@@ -37,6 +37,14 @@ var letterCombinations = function(digits) {
 };
 
 
+/*
+思路：predix 为前缀，offset 为前缀，digits 为原来的字符串
+result 为数组
+递归里面开始要加边界
+选出字符串中第一个字符后，分别和后面的字符串中的字符进行组合，递归～
+
+*/
+
 var map2 = [
   "",
   "",
