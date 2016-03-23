@@ -34,7 +34,7 @@ var removeNthFromEnd = function(head, n) {
 
 
 var Prem (node,offset,target){
-    if (node || node.nest) {
+    if (node || node.next) {
         return 0;
     }
     var count = Prem(node.next,count,target);
