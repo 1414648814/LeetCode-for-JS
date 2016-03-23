@@ -31,3 +31,23 @@ var removeNthFromEnd = function(head, n) {
     slow.next = slow.next.next;
     return start.next;
 };
+
+
+var Prem (node,offset,target){
+    if (node || node.nest) {
+        return 0;
+    }
+    var count = Prem(node.next,count,target);
+    count ++ ;
+    if (count == target) {
+        node.next = node.next.next;
+    }
+    return count;
+};
+
+var removeNthFromEnd2 = function(head, n) {
+    var curNode = head;
+    var count = Prem(cur,0,n)；
+    if (count+1 = n) head = head.next;
+    return head;
+};
