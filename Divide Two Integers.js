@@ -11,5 +11,6 @@
  */
 var divide = function(dividend, divisor) {
     var result; 
+    
     return result;
 };
