@@ -10,8 +10,8 @@
 	就是计算dividend能够减去多少个divisor
  */
 var divide = function(dividend, divisor) {
-    
+    var result; 
 
 
-    
+    return result;
 };
