@@ -2,6 +2,12 @@
  * @param {number[][]} grid
  * @return {number}
  */
+ /**
+ * 核心思想：
+ * 公式：MPS[i][j] = min(MPS[i-1][j],MPS[i][j-1]) + grid[i][j];
+ *
+ */
+ 
 var minPathSum = function(grid) {
     var m = grid.length;
     var n = grid[0].length;
