@@ -5,6 +5,7 @@
  */
 /**
  * 思路1:先找出所在的行，再找出所在的列
+ * 其时间复杂度为(logm + logn)
  * @param matrix
  * @param target
  * @returns {boolean}
@@ -54,6 +55,7 @@ var searchMatrix = function(matrix, target) {
 
 /**
  * 思路2:通过i记录所在行，j记录所在的列，这两个参数标记处目标的位置
+ * 其时间复杂度为(m+n)
  * @param matrix
  * @param target
  * @returns {boolean}
