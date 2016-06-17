@@ -15,7 +15,7 @@ var generateTrees = function(n) {
         return [];
     else
     {
-        //2.初始化数组
+        //2.计算n下BST的数目，和一的题目要求是一样的
         var dp = new Array(n + 1);
         dp[0] = dp[1] = 1;
         for (var i = 2;i <= n;i++)
@@ -38,7 +38,7 @@ var generateTrees = function(n) {
 
     function helper(start, end) {
         var roots = null;
-        var curlen = 0;
+        var curlen = 0;   //记录执行的BST的index
 
         //1.边界判断
         if (start > end)
@@ -54,11 +54,12 @@ var generateTrees = function(n) {
         //3.计算树
         for (var i = start; i <= end; i++)
         {
-            //计算左子树
+            //递归计算左子树
             var lefts = helper(start, i-1);
-            //计算右子树
+            //递归计算右子树
             var rights = helper(i+1,end);
 
+            //对节点进行赋值
             for (var p = 0; p < lefts.length; p++)
             {
                 for (var q = 0; q < rights.length; q++)
