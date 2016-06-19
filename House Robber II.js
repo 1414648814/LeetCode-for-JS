@@ -40,6 +40,11 @@ var rob = function(nums) {
     }
 };
 
+/*
+和上面的方法有点不同，上面的方法是在同一个DP数组上面进行操作，而下面的方法
+则是将记录起始和终点位置，分别计算出DP数组的最大利益进行比较
+但是两种方式其实思想还是类似，不过做法有点点不同
+*/
 var rob2 = function (nums) {
     var length  = nums.length;
     //1.边界判断
@@ -51,7 +56,8 @@ var rob2 = function (nums) {
     {
         return Math.max(robSub(0, nums.length - 2),robSub(1, nums.length-1));
     }
-
+    
+    //和1一样
     function robSub (start, end)
     {
         var len = end - start + 1;
