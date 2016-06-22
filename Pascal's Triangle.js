@@ -7,7 +7,7 @@ var generate = function(numRows) {
     //1.边界判断
     if (numRows === 0)
     {
-        result.push([]);
+        return result;
     }
 
     for (var i = 0; i < numRows; i++)
